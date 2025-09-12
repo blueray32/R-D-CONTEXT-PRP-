@@ -1,0 +1,10 @@
+{
+  "$schema": "https://mcp.schema.json",
+  "servers": {
+    "firecrawl": {
+      "command": "firecrawl",
+      "args": [],
+      "env": {}
+    }
+  }
+}
