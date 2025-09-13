@@ -25,52 +25,22 @@ What this repo gives you (the “kit”)
 	•	Makefile helpers for quick gates.
 
 Flow at a glance
+<img width="1960" height="290" alt="image" src="https://github.com/user-attachments/assets/1560c81e-2386-419c-a7e9-df1b87fcd173" />
 
-[You] → prime_* → [Primary agent (tiny memory)]
-             ├─ delegates ingestion → [Sub-agents] → files + short summaries → disk
-             ├─ optional background task → reports/<task>/<ts>[_completed].md
-             └─ write bundle trail → agents/context-bundles/<ts_session>.jsonl
+
+
+
+ 
 
 Repo layout
 
-. 
-├─ memory/concise.md                     # ≤ ~50 lines, universal truths only
-├─ .claude/commands/                     # primes + orchestration commands
-│  ├─ prime_bug.md | prime_feature.md | prime_docs.md | prime_cc.md
-│  ├─ load_ai_docs.md                    # spawn sub-agents to fetch/summarize
-│  └─ background.md                      # detached long-run with report file
-├─ configs/mcp/firecrawl.json            # example strict per-task MCP config
-├─ agents/context-bundles/               # append-only JSONL trails
-├─ reports/                              # background + prime run outputs
-├─ scripts/                              # bundle writer/loader + memory lint
-│  ├─ context_bundle_writer.py
-│  ├─ load_bundle.py
-│  └─ lint_memory.py
-├─ .github/workflows/lint-memory.yml     # CI: keep concise.md tiny
-├─ Makefile                              # convenience wrappers
-└─ PRP.md | README.md                    # this doc + full PRP write-up
+<img width="2114" height="1022" alt="image" src="https://github.com/user-attachments/assets/58237b62-7d7c-490a-9e3a-e536e3ecfd5c" />
+
 
 Quickstart (2 minutes)
 
-1) Clone
-git clone https://github.com/<you>/R-D-CONTEXT-PRP-.git
-cd R-D-CONTEXT-PRP-
+<img width="966" height="378" alt="image" src="https://github.com/user-attachments/assets/31df6f80-784b-4223-a59f-2673e76dc077" />
 
-2) (Optional) run the memory guard locally
-python3 scripts/lint_memory.py
-
-3) Try a prime (example: small feature)
-In your agent UI or CLI: run .claude/commands/prime_feature.md
-It will read minimal code, propose a one-screen plan, implement diffs,
-and write a summary to reports/feature/<timestamp>.report.md
-
- 4) Ingest docs the R&D way (sub-agents write to disk, not your context)
- Run .claude/commands/load_ai_docs.md with a few URLs; check agents/ai-docs/*
- and the concise summaries it produced.
-
- 5) Blow up the window on purpose, then remount
- python3 scripts/load_bundle.py agents/context-bundles/<your-latest>.jsonl
- You’ll get a deduped “one-screen recap” of reads + key findings.
 
 Gates (Definition of Done)
 	•	Gate A — Reduce
