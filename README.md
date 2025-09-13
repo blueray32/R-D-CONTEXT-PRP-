@@ -25,6 +25,7 @@ What this repo gives you (the “kit”)
 	•	Makefile helpers for quick gates.
 
 Flow at a glance
+
 <img width="1960" height="290" alt="image" src="https://github.com/user-attachments/assets/1560c81e-2386-419c-a7e9-df1b87fcd173" />
 
 
