@@ -52,25 +52,25 @@ Repo layout
 
 Quickstart (2 minutes)
 
-# 1) Clone
+1) Clone
 git clone https://github.com/<you>/R-D-CONTEXT-PRP-.git
 cd R-D-CONTEXT-PRP-
 
-# 2) (Optional) run the memory guard locally
+2) (Optional) run the memory guard locally
 python3 scripts/lint_memory.py
 
-# 3) Try a prime (example: small feature)
-# In your agent UI or CLI: run .claude/commands/prime_feature.md
-# It will read minimal code, propose a one-screen plan, implement diffs,
-# and write a summary to reports/feature/<timestamp>.report.md
+3) Try a prime (example: small feature)
+In your agent UI or CLI: run .claude/commands/prime_feature.md
+It will read minimal code, propose a one-screen plan, implement diffs,
+and write a summary to reports/feature/<timestamp>.report.md
 
-# 4) Ingest docs the R&D way (sub-agents write to disk, not your context)
-# Run .claude/commands/load_ai_docs.md with a few URLs; check agents/ai-docs/*
-# and the concise summaries it produced.
+ 4) Ingest docs the R&D way (sub-agents write to disk, not your context)
+ Run .claude/commands/load_ai_docs.md with a few URLs; check agents/ai-docs/*
+ and the concise summaries it produced.
 
-# 5) Blow up the window on purpose, then remount
-python3 scripts/load_bundle.py agents/context-bundles/<your-latest>.jsonl
-# You’ll get a deduped “one-screen recap” of reads + key findings.
+ 5) Blow up the window on purpose, then remount
+ python3 scripts/load_bundle.py agents/context-bundles/<your-latest>.jsonl
+ You’ll get a deduped “one-screen recap” of reads + key findings.
 
 Gates (Definition of Done)
 	•	Gate A — Reduce
